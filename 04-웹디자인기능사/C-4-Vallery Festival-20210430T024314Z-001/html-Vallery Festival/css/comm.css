@@ -1,0 +1,232 @@
+@charset "UTF-8";
+/* 헤더를 왼쪽으로 하는 방법
+*{ 기본세팅
+    margin: 0; padding: 0;
+    font-size: 14px; color: #333333;
+    line-height: 1.5; text-decoration: none;
+    list-style: none; box-sizing: border-box;
+}
+.wrap{
+    position:relative;
+    width:1000px; 가로 1000일 경우
+    background-color:#eee; < 어느정도 되는지 체크하기위해 색상 입히기
+ }
+ header{
+     position:fixed; 헤더 고정
+     width:200px; 
+     height:650px;
+  }
+.slide{
+    height:350px;
+    background-color:#lightblue;
+ }
+ .container{
+     height:200px;
+     background-color: lightpink;
+ }
+ footer{
+     height:100px;
+     background-color: blue;
+ }
+ */
+*{
+    margin: 0; padding: 0;
+    font-size: 15px; color: #333333;
+    line-height: 1.5; text-decoration: none;
+    list-style: none; box-sizing: border-box;
+    /* background: #ffffff; */
+}
+
+.wrap{
+    position: relative;
+    width: 1000px;
+    height: 650px;
+    padding-left: 300px;
+}
+header{
+    position: fixed; 
+    top: 0; left: 0;
+    z-index: 1000;
+    width: 300px;
+    height: 650px;
+    /* background: tomato; */
+}
+/* 로고 */
+header h1 a{
+    display: block;
+    /* position: relative; */
+    width: 300px; height: 100px;
+    background: url(../images/logo.png) no-repeat 0 50%;
+    text-indent: -9999px;
+    /* border:1px solid black; */
+}
+
+/* 네비게이션 */
+#gnb{
+    position: absolute;
+    display: flex;
+    margin-top: 100px;
+    width:300px; height: 550px;
+    text-align: center;
+    align-items: center;
+}
+/* 좌측메뉴 */
+.nav-depth1{
+    display: block;
+    position: absolute;
+    top: -80px;
+    left: 20px;
+    text-align: center;
+    border-top: 1px solid black;
+    width: 260px; height: 200px;
+    /* background: lightblue; */
+}
+.nav-depth1 li{
+    position: relative;
+    height: 50px;
+    padding: 12px 0;
+    border-bottom: 1px solid black;
+    /* border:1px solid black; */
+}
+.nav-depth1 a{
+    display: block;
+    line-height: 49px;
+    margin-top: -12px;
+    height: 49px;
+}
+/* 마우스 올려놓앗을 때 */
+.nav-depth1 a:hover{
+    background:  lightseagreen;
+    color: #eee;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+/* 마우스를 올려놓앗을 때 보조메뉴 등장 */
+.nav-depth1 > li:hover .nav-depth2{
+    display: block;
+}
+/* 보조메뉴 */
+/* 보조메뉴의 색상을 지정할 때 display를 주석처리 후
+.nav-depth2안에 잇는 a태그를 지정해 준 뒤 display를
+block으로 해주고 배경을 입힌 뒤에 주석을 풀어준다. */
+.nav-depth2{
+    display: none;
+    position: absolute;
+    top: -1px; left: 260px;
+    width: 260px; height: 0;
+    border-top: 1px solid black;
+    background: #000;
+}
+.nav-depth2 a{
+    display: block;
+    background: lightblue;
+    line-height: 49px;
+    margin-top: -12px;
+    height: 49px;
+}
+.nav-depth2 a:hover{
+    background:  lightseagreen;
+    color: #eee;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+/* 슬라이드 */
+.slide{
+    overflow: hidden;
+    position: relative;
+    height: 350px;
+}
+.slide img{
+    display: block;
+}
+.slide ul{
+    display: flex;
+    position: absolute; top: 0; left: 0;
+}
+
+/* 컨테이너 배경 */
+.container{
+    display: flex;
+    height: 200px;
+    padding:  10px 0;
+}
+.container .tab{
+    display: flex;
+}
+.tab .lst-gallery{
+    display: flex;
+    justify-content: space-between;
+}
+/* 이미지 최대 width 나누는 코드 */
+.tab .lst-gallery li{
+    width: 33.0%;
+}
+/* 갤러리 이미지 간격 맞추느 코드*/
+.tab .lst-gallery img{
+    width: 100%; height: 150px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+.tab .lst-bbs a{
+    display: block;
+    position: relative;
+    padding: 3px 0 0 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.sec-goto{
+    display: block;
+}
+.sec-goto .lst-goto{
+    display: flex;
+    /* 밑으로 떨어지게 해주는 코드 */
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 150px;
+}
+/* sec-cont 아이콘 정렬 */
+.lst-goto li{
+    width: 48%;
+}
+/* sec-cont 아이콘 사이 띄우기 */
+.lst-goto a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    background: rgba(0,0,0,.15);
+    border-radius: 10px;
+}
+.lst-goto i{
+    margin-right: 5px;
+    font-size: 2.5em;
+    vertical-align: middle;
+}
+footer{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 700px; height: 100px;
+    background: black;
+    padding-top: 25px;
+}
+footer h2{
+    display: inline-block;
+    background: url(../images/footerlogo.png) no-repeat 50% 50%;
+    width: 180px; height: 39px;
+    text-indent: -9999px;
+}
+.copyright{
+    display: inline-block;
+    text-align: center;
+    margin-left: 10px;
+    width: 313px;
+}
+.familysite{
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    line-height: 20px;
+}

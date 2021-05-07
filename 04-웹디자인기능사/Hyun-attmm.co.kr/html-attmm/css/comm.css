@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/* /* 헤더를 왼쪽으로 하는 방법 */
+*{ 
+    /*기본세팅*/
+    margin: 0; padding: 0;
+    font-size: 14px; color: #333333;
+    line-height: 1.5; text-decoration: none;
+    list-style: none; box-sizing: border-box;
+}
+.wrap{
+    position:relative;
+    width:1200px; /*가로 1000일 경우*/
+    background-color:#eee; /*< 어느정도 되는지 체크하기위해 색상 입히기*/
+    padding-left: 300px;
+ }
+ header{
+     position:fixed; /*헤더 고정*/
+     width:200px; 
+     height:650px;
+     background-color: aqua;
+  }
+.slide{
+    position: relative;
+    height:350px;
+    background-color: lightblue;
+ }
+ .container{
+     position: relative;
+     height:200px;
+     background-color: lightpink;
+ }
+ footer{
+     position: relative;
+     height:100px;
+     background-color: blue;
+ }

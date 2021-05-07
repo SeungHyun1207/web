@@ -1,0 +1,344 @@
+@charset "UTF-8";
+
+*{
+    margin: 0; padding: 0;
+    font-size: 14px; color: #222328;
+    line-height: 1.5; text-decoration: none;
+    list-style: none; box-sizing: border-box;
+}
+
+/* comm */
+.blind{
+    display: inline-block;
+    /* display: none; 스크린 리더가 못 읽음 */
+    overflow: hidden;
+    line-height: 0;
+    text-indent: -9999px;
+    width: 0; height: 0;
+}
+
+
+.wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    border-bottom: 1px solid blue;
+}
+header h1 a{
+    display: block;
+    width: 160px;
+    height: 100%;
+    /* 로고 이미지  url 과 정 중앙맞추기*/
+    background: url(../images/logo.png) no-repeat 0 50%;
+    /* a태그 텍스트 옆으로 밀기 */
+    text-indent: -9999px;
+}
+.nav-depth1{
+    display: flex;
+}
+.nav-depth1 > li{
+    position: relative;
+}
+.nav-depth1 > li > a{
+    display: block;
+    height: 100px;
+    line-height: 100px; /*세로로 하는 코드*/
+    padding: 0 30px;
+}
+.nav-depth1 > li > a:hover{
+    /* 마우스를 올렸을 때 색깔 변하는 코드와 밑에 줄생기는 코드 */
+    color: blueviolet;
+    border-bottom: 3px solid black;
+}
+.nav-depth1:hover .nav-depth2{
+    /* 메인메뉴에 마우스를 올렸을 때 전체 보조메뉴가 뜨게 하는 코드*/ 
+    /* display: block; */
+    height: 145px;
+    padding: 10px 0;
+} 
+/* .nav-depth1 li:horver .nav-depth2{
+    /* 메인메뉴에 마우스를 올렸을 때 각각의 보조메뉴가 뜨게 하는 코드 
+    display:block;
+ } */
+.nav-depth2{
+    /* display: none; 보조메뉴를 잠깐 사라지게 하는 코드 */
+    overflow: hidden;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 0;
+    background: #eee;
+    /* 부드럽게 나오게 해주는 코드 */
+    transition: all .5s;
+}
+.nav-depth2 a{
+    display: block;
+    text-align: center;
+    /* 글자간 간격  */
+    padding: 6px 0;
+}
+.nav-depth2 a:hover{
+    background:  lightseagreen;
+    color: #eee;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+/* 슬라이드 */
+.slide{
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+    background: tomato;
+}
+.slide img{
+    display: block;
+}
+.slide ul{
+    /* 슬라이드 정렬 */
+    display: flex;
+    /* left를 -100%하면 2번째 슬라이드 -200%하면 3번째 슬라이드가 나온다 */
+    position: absolute; top: 0; left: 0;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    padding: 10px 0;
+}
+/* 공지사항,갤러리,배너,바로가기 */
+.container .tab, .container section{
+    width: 32%;
+}
+/* 공지사항과 갤러리 */
+.container .tab{
+    display: flex;
+    justify-content: space-between;
+}
+/* 공지사항과 갤러리 밑선 */
+.tab{
+    position:relative;
+}
+/* 공지사항과 갤러리 */
+.tab section{
+    width: 49%;
+}
+/* 공지사항과 갤러리 */
+.tab .sec-tit a{
+    display: block;
+    width: 100%; height: 48px;
+    background: #f0f0f0;
+    text-align: center;
+    line-height: 48px;
+    /* border-bottom: 2px solid blue; */
+}
+/* 활성화 되었을 때의 공지사항 */
+.tab .on .sec-tit a{
+    background: rgb(25, 41, 185);;
+    color: #fff;
+}
+/* 선 이렇게 해도 되는지 확인받기 */
+/* .line{
+    position:absolute;
+    display: block;
+    height: 48px;
+    width: 390px;
+    border-bottom:  2px solid blue;
+} */
+/* 공지사항과 갤러리 밑선 */
+.tab::after{
+    content: '';
+    position: absolute; top: 48px; left: 0;
+    width: 100%; height: 3px;
+    background: lightseagreen;
+}
+/* 공지사항과 갤럭시 서로 겹치게 놓기 */
+.tab .sec-cont{
+    /* display:none 은 둘다 안보이게 해주기 */
+    display: none;
+    position: absolute;
+    top: 57px;left: 0;
+    /* 공지사항의 글자 관련 */
+    width: 100%;
+    /* bottom: 0; */
+}
+/* (눌럿을 때) on클래스만 보여주게 하기  */
+.tab .on .sec-cont{
+    display:block;
+}
+/* 컨텐츠 글자간의 간격 */
+.tab .lst-bbs a{
+    display: block;
+    position: relative;
+    padding: 5px 0 5px 15px;
+     /* 많은 글자들을 한줄로 만드는 코드  */
+    white-space: nowrap;
+    width: 100%;
+    /* 공지사항 글자를 ...으로 만드는 코드 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 컨텐츠>글자 앞의 상자 */
+.tab .lst-bbs a::before{
+    content: "\f105";
+    font-family: "Line Awesome Free";
+    font-weight: 900;
+    position:absolute;top: 50%;left: 0;
+    display: inline-block;
+    /* width: 5px; height: 5px;  */
+    /* margin-top: -2.5px; */
+    transform: translateY(-50%);
+    /* background: black; */
+    color: red; font-size:1em;
+}
+/* 갤러리 */
+.tab .lst-gallery{
+    display: flex;
+    justify-content: space-between;
+}
+/* 갤러리 사진들간의 간격 */
+.tab .lst-gallery li{
+    width: 32.5%;
+}
+.tab .lst-gallery li a{
+    display: block; 
+}
+/* 갤러리 이미지 */
+.tab .lst-gallery img{
+    width: 100%; height: 123px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+/* 배너 */
+.sec-bnr{
+    position: relative;
+    display: flex;
+    height: 180px;
+    margin-bottom: 20px;
+}
+.sec-goto{
+    display: flex;
+}
+.sec-goto .lst-goto{
+    display: flex;
+    /* 밑으로 떨어지게 해주는 코드 */
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 180px;
+}
+/* sec-cont 아이콘 정렬 */
+.lst-goto li{
+    width: 48%;
+}
+/* sec-cont 아이콘 사이 띄우기 */
+.lst-goto a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85px;
+    background: rgba(0,0,0,.15);
+    border-radius: 10px;
+}
+.lst-goto i{
+    margin-right: 5px;
+    font-size: 2.5em;
+    vertical-align: middle;
+}
+/* footer 3개  정렬하는 코드 */
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 100px;
+    border-top: 1px solid black;
+    background: #eee;
+}
+/* footer 로고 가운데 정렬*/
+footer h1{
+    display: flex;
+    align-items: center;
+}
+/* footer 로고 가운데 정렬 */
+footer h1 a{
+    display: block;
+    width: 200px;
+    height: 100px;
+    /* 로고 이미지  url 과 정 중앙맞추기*/
+    background: url(../images/logo-footer.png) no-repeat 0 50%;
+    /* a태그 텍스트 옆으로 밀기 */
+    text-indent: -9999px;
+}
+/* footer 로고 가운데 정렬*/
+footer .copyright{
+    display: flex;
+    align-items: center;
+}
+/* footer 로고 가운데 정렬*/
+footer .sns{
+    display: flex;
+    align-items: center;
+}
+footer .sns a{
+    padding: 10px;
+}
+/* footer 로고 가운데 정렬과 이모티콘*/
+footer .sns a::before{
+    display: inline-block;
+    vertical-align: middle;
+    /* 아이콘과 글자의 간격 */
+    margin: -3px 5px 0 0; 
+    font-family: 'Line Awesome Brands';
+    font-size: 2em;
+}
+footer .sns a:first-child::before{
+    content: "\f09a";
+    color: blue;
+}
+footer .sns a:nth-child(2)::before{
+    content: "\f16d";
+    color: blueviolet;
+}
+footer .sns a:last-child::before{
+    content: "\f167";
+    color:red;
+}
+/* 팝업창 */
+#modal{
+    /* display:flex라면 띄워지고 none으로 하면 사라짐 */
+    display:none;
+    justify-content: center;
+    position: fixed;
+    align-items: center;
+    top: 0;left: 0;right: 0;bottom: 0;
+    background-color:rgba(0,0,0,.5);
+}
+/* 팝업창 박스 */
+#modal .box{
+    position: relative;
+    padding: 20px;
+    width: 500px; height: 300px;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* 닫기버튼 */
+#modal .btn-close{
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 70px;height: 70px;
+    border-radius: 50%; border: none;
+    background: tomato;
+    cursor: pointer;
+}
+/* Line Awesome 에서 이모티콘 가져올때 네모로 사용되면 폰트패밀리가 없다는 것 */
+#modal .btn-close::before{
+    content: "\f00d";
+    margin-right: -3px;
+    font-family: Line Awesome Free;
+    font-weight: 900;
+    font-size: 2em; color: #fff;
+}
