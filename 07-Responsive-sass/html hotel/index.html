@@ -7,10 +7,11 @@
     <title>media screen 화면별 적용방법</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <!-- scss는 css가 아니기 때문에 노드.js설치 후  node.sass설치 npm install -g node-sass << 입력-->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="./dist/css/comm.css">
 </head>
 <body>
-    <div class="u_skip">
+    <div id="u_skip">
         <a href="#gnb">주메뉴 바로가기</a>
         <a href="#main">본문 바로가기</a>
     </div>
@@ -19,13 +20,12 @@
             <h1 class="logo">
                 <a href="#">DYNE Oceano</a>
             </h1>
-
             <nav id="gnb">
                 <ul>
-                    <li><a href="#"></a>HOTEL</li>
-                    <li><a href="#"></a>Fucility</li>
-                    <li><a href="#"></a>Business</li>
-                    <li><a href="#"></a>Restaurant</li>
+                    <li><a href="#">HOTEL</a></li>
+                    <li><a href="#">Fucility</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Restaurant</a></li>
                 </ul>
             </nav>
 
@@ -37,17 +37,34 @@
                 </ul>
                 <h2 class="blind">sns 메뉴</h2>
                 <ul class="lst-sns">
-                    <li><a href="#">facebook</a></li>
-                    <li><a href="#">instagram</a></li>
-                    <li><a href="#">youtube</a></li>
+                    <li><a href="#"><span class="blind">facebook</span></a></li>
+                    <li><a href="#"><span class="blind">instagram</span></a></li>
+                    <li><a href="#"><span class="blind">youtube</span></a></li>
                 </ul>
             </nav>
         </header>
-        <div class="util">유틸</div>
+        <div class="util">
+            <ul class="col-left">
+                <li><a href="#">Sign up for stylenws</a></li>
+                <li><a href="#">English</a></li>
+            </ul>
+            <ul class="col-right">
+                <li><a href="#">Log in or Register</a></li>
+                <li><a href="#">Check out</a></li>
+            </ul>
+        </div>
         <div id="main" class="container">
-            <article></article>
-            <article></article>
-            <article></article>
+            <article>
+                <strong>Maldives</strong>
+            </article>
+            <article>
+                <h2>A whole New World</h2>
+                <p>I can show you thd world. Shining Shimmering Splended<br>
+                    Tell me when you decide let me be in your heart</p>
+            </article>
+            <article>
+                <p>Reservation</p>
+            </article>
             <article></article>
             <article></article>
             <article></article>

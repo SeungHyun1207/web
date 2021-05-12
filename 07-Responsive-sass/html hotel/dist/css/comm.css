@@ -1,12 +1,5 @@
+@charset "UTF-8";
 @import url(./reset.css);
-body {
-  background: url(../../pc.png) 0 0 no-repeat;
-}
-
-.wrap {
-  opacity: 1;
-}
-
 .wrap {
   padding-left: 192px;
 }
@@ -18,20 +11,93 @@ body {
   bottom: 0;
   width: 192px;
   padding: 40px 0 30px;
-  background: lightpink;
+  background: #fff;
 }
 
 #header .logo a {
   display: block;
-  width: 151px;
+  width: 137px;
   height: 109px;
   margin: 0 auto;
-  text-indent: -9999%;
   background: url(../../images/logo.jpg) 0 0 no-repeat;
+  text-indent: -9999px;
+}
+
+#header .nav-goto {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+#header .nav-goto .lst-goto li {
+  display: inline-block;
+}
+
+#header .nav-goto .lst-goto li:last-child a::after {
+  display: none;
+}
+
+#header .nav-goto .lst-goto a {
+  display: block;
+  position: relative;
+  padding: 7px;
+}
+
+#header .nav-goto .lst-goto a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 13px;
+  right: -3px;
+  width: 1px;
+  height: 10px;
+  background: red;
+}
+
+#header .nav-goto .lst-sns li {
+  display: inline-block;
+}
+
+#header .nav-goto .lst-sns li:first-child a {
+  background-image: url(../../images/sns-facebook.svg);
+}
+
+#header .nav-goto .lst-sns li:first-child a:hover {
+  background-image: url(../../images/sns-facebook-on.svg);
+}
+
+#header .nav-goto .lst-sns li:nth-child(2) a {
+  background-image: url(../../images/sns-instagram.svg);
+  margin: 0 3px;
+}
+
+#header .nav-goto .lst-sns li:nth-child(2) a:hover {
+  background-image: url(../../images/sns-instagram-on.svg);
+}
+
+#header .nav-goto .lst-sns li:nth-child(3) a {
+  background-image: url(../../images/sns-youtube.svg);
+}
+
+#header .nav-goto .lst-sns li:nth-child(3) a:hover {
+  background-image: url(../../images/sns-youtube-on.svg);
+}
+
+#header .nav-goto .lst-sns a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: tomato;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 90% auto;
 }
 
 #gnb {
-  margin: 85px auto 0;
+  margin: 75px auto 0;
 }
 
 #gnb a {
@@ -47,14 +113,40 @@ body {
 .util {
   height: 40px;
   background: #000;
+}
+
+.util a {
+  display: block;
+  height: 40px;
+  padding: 0 10px;
+  line-height: 3.114em;
   color: #fff;
+  font-size: 0.857em;
+  /*12px*/
+}
+
+.util .col-left {
+  float: left;
+}
+
+.util .col-left li {
+  float: left;
+}
+
+.util .col-right {
+  float: right;
+}
+
+.util .col-right li {
+  float: left;
 }
 
 .container {
-  height: calc(100vh - 50px);
+  height: calc(100vh - 40px);
 }
 
 .container article {
+  position: relative;
   float: left;
   width: 20%;
   height: 25%;
@@ -63,16 +155,45 @@ body {
 .container article:first-child {
   width: 60%;
   height: 50%;
-  background: rgba(0, 0, 0, 0.1);
+  background: url(../../images/pic1.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+.container article:first-child strong {
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+  color: #fff;
+  font-size: 5em;
 }
 
 .container article:nth-child(2) {
   width: 40%;
-  background: rgba(0, 0, 0, 0.15);
+  background: #fff;
+  position: relative;
+  padding: 10px 20px;
+}
+
+.container article:nth-child(2) h2 {
+  top: 0;
+  left: 0;
+  color: #000;
+  font-size: 3em;
+}
+
+.container article:nth-child(2) p {
+  opacity: .7;
 }
 
 .container article:nth-child(3) {
-  background: rgba(0, 0, 0, 0.2);
+  background: lightblue;
+}
+
+.container article:nth-child(3) p {
+  position: absolute;
+  left: 20px;
+  top: 50px;
+  font-size: 1.5em;
 }
 
 .container article:nth-child(4) {
@@ -117,10 +238,10 @@ body {
   .wrap {
     padding-left: 0;
   }
-  header {
+  #header {
     position: static;
     width: 100%;
-    height: 80px;
+    height: 83px;
   }
   .container {
     overflow: auto;
@@ -175,16 +296,16 @@ body {
   }
   .container article:first-child {
     width: 99.999%;
-    height: 300px;
+    height: 400px;
   }
   .container article:nth-child(2), .container article:nth-child(6) {
     width: 66.666%;
   }
-  .container article:nth-child(4), .container article:nth-child(7), .container article:nth-child(10), .container article:nth-child(12) {
-    display: none;
-  }
   .container article:nth-child(9) {
     width: 33.333%;
+  }
+  .container article:nth-child(4), .container article:nth-child(7), .container article:nth-child(10), .container article:last-child {
+    display: none;
   }
 }
 
@@ -196,12 +317,13 @@ body {
     width: 100%;
   }
   .container article:nth-child(n+3) {
+    /* 3번째 이후 모든 요소 */
     width: 50%;
   }
 }
 
 @media screen and (max-width: 639px) {
-  header {
+  #header {
     height: 120px;
   }
   .util {
@@ -219,7 +341,7 @@ body {
 }
 
 @media screen and (max-width: 479px) {
-  header {
+  #header {
     position: fixed;
     top: 50%;
     left: 50%;
