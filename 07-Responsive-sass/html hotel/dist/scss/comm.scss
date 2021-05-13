@@ -94,7 +94,7 @@ $lightpink: lightpink;
         display: block;
         padding: 8px 0 8px 64px;
         &:hover {
-            background: $tomato;
+            background: blueviolet;
             color: $w;
         }
     }
@@ -131,68 +131,78 @@ $height : 25%;
     article {
         position: relative;
         float: left;
-        width: $width; height: $height;
-        // border: 1px solid $tomato;
+        width: $width; height: $height; 
+        padding: 30px;
+        // transition:;
+        h2 {
+            margin-bottom: 5px;
+            font-size: 1.375em;
+        }
+        p {
+            opacity: .7;
+        }
         &:first-child {
             width: $width * 3; height: $height * 2;
-            background: url(../../images/pic1.jpg) 0 0 no-repeat;
+            background: url(../../images/pic1.jpg) 0 100% no-repeat;
             background-size: cover;
-            strong{
-                position: absolute; bottom: 2px; right: 0;
-                color: $w; font-size: 5em;
+            strong {
+                position: absolute;bottom: 2px;right: 0;
+                color: $w; font-size: 10vw;line-height: 0.7;
             }
         }
-        &:nth-child(2) {
+          &:nth-child(2){
             width: $width * 2;
-            background: #fff;
-            position: relative;
-            padding: 10px 20px;
-            h2{
-                top: 0; left: 0;
-                color: $b; font-size: 3em;
-            }
-            p{
-                opacity: .7;
-            }
-        }
-        &:nth-child(3) {
-            background:lightblue;
-            // 고리 라인어썸에서 가져오기
-            p{
-                position: absolute;
-                left: 20px; top: 50px;
-                font-size: 1.5em;
-            }
-        }
-        &:nth-child(4) {
-            background: rgba($b, 0.25);
-        }
-        &:nth-child(5) {
-            background: rgba($b, 0.3);
-        }
-        &:nth-child(6) {
+            background: $w;
+          }
+          &:nth-child(3){
+            background: #c6f6fa;
+          }
+          &:nth-child(4){
+            background: url(../../images/pic2.jpg) 50% 50% no-repeat;
+            background-size: cover;
+          }
+          &:nth-child(5){
+            background: url(../../images/pic3.jpg) 50% 50% no-repeat;
+            background-size: cover;
+          }
+          &:nth-child(6){
             width: $width * 2;
-            background: rgba($b, 0.35);
-        }
-        &:nth-child(7) {
-            background: rgba($b, 0.4);
-        }
-        &:nth-child(8) {
-            background: rgba($b, 0.45);
-        }
-        &:nth-child(9) {
+            background: $w;
+          }
+          &:nth-child(7){
+            background: url(../../images/pic4.jpg) 50% 50% no-repeat;
+            background-size: cover;
+          }
+          &:nth-child(8){
+            background: $w;
+          }
+          &:nth-child(9){
             width: $width * 2;
-            background: rgba($b, 0.5);
-        }
-        &:nth-child(10) {
-            background: rgba($b, 0.55);
-        }
-        &:nth-child(11) {
-            background: rgba($b, 0.6);
-        }
-        &:last-child {
-            background: rgba($b, 0.65);
-        }
+            background: url(../../images/pic5.jpg) 50% 50% no-repeat;
+            background-size: cover;
+          }
+          &:nth-child(10){
+            background: url(../../images/pic6.jpg) 50% 50% no-repeat;
+            background-size: cover;
+          }
+          &:nth-child(11){
+            background: #e6f5fc;
+          }
+          &:last-child {
+            background: url(../../images/pic7.jpg) 50% 50% no-repeat;
+            background-size: cover;
+          }
+          .la-sync{
+              position: absolute;
+              bottom: -50px;right: -50px;
+              color: $w; font-size: 17em;
+            //   애니메이션 
+              animation: ani-sync 10s linear infinite both;
+          }
+          @keyframes ani-sync{
+              0%{transform: rotate(0);}
+              100%{transform:rotate(360deg);}
+          }
     }
 }
 
@@ -203,9 +213,28 @@ $height : 25%;
     }
     #header {
         position: static;
-        width: 100%; height: 83px;
+        width: 100%; height: 30px;
     }
-    
+    .logo{
+        position: relative;
+        float:left;
+        padding: 0 0 0 60px;
+        height: 50px;
+    }
+    #gnb{
+        float: right;
+        margin: auto;
+        li{
+            float:left;
+        }
+        a{
+            display: block;
+            text-align: center;
+            line-height: 55px;
+            padding: 0 30px;
+        }
+    }
+
     $height : 250px;
     .container {
         overflow: auto; 
@@ -230,7 +259,7 @@ $height : 25%;
         article {
             width: $width; height: $height;
             &:first-child {
-                width: $width * 3;
+                width: $width * 3   ;
                 height: $height * 2;
             }
             &:nth-child(2) {
@@ -280,15 +309,23 @@ $height : 25%;
 // width 779px 이하일 경우 적용
 @media screen and (max-width: 779px) {
     $width : 50%;
-
+// 마지막 사진 오류???
+// 779에서 745까지는 정상 745~640까지 배경화면 오류?
     .container {
         article {
             width: $width;
             &:first-child, &:nth-child(2) {
-                width: $width * 2; 
+                width: $width * 2;
+                height: 28%;
+            }
+            &:nth-child(3){
+                display: none;
             }
             &:nth-child(n+3) { /* 3번째 이후 모든 요소 */
                 width: $width;
+            }
+            &:nth-child(n+2){
+                height: 18%;
             }
         }
     }
@@ -296,9 +333,17 @@ $height : 25%;
 
 // width 639px 이하일 경우 적용
 @media screen and (max-width: 639px) {
-
+// 마지막 사진 오류???
     #header {
         height: 120px;
+        .logo{
+            position: absolute;
+            top: 10px; left: 195px;
+        }
+        #gnb{
+            position: absolute;
+            margin: 45px;
+        }
     }
     .util {
         display: none;
@@ -322,9 +367,23 @@ $height : 25%;
 @media screen and (max-width: 479px) {
     
     #header {
-        position: fixed; top: 50%; left: 50%;
+        position: fixed; top: 50%; left: 50%; z-index: 1000;
         width: 80%; height: 80vh;
-         transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        .logo{
+            top: 26px;
+            left: 70px;
+        }
+        #gnb{
+            position: absolute;
+            top: 100px;
+            background: rgb(214, 214, 214);
+            li{
+                width: 300px;
+                padding: 10px 0 10px 0;
+                border-bottom: 1px solid black;
+            }
+        }
     }
     .container {
         height: auto;

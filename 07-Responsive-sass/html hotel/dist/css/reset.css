@@ -41,3 +41,5 @@ input[type=password] {font-family: 'Malgun Gothic';}
 .tbl {border-collapse:collapse;border-spacing:0} /* 테이블 초기화 */
 .clear_g {display:block;overflow:visible;width:auto;clear:both;*zoom:1}
 .clear_g:after {display:block;visibility:hidden;height:0;font-size:0;clear:both;content:''}
+
+/* body{background: url(../../pc.png) 0 0 no-repeat; background-size: contain;} .wrap{opacity: .5s;} */

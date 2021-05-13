@@ -106,7 +106,7 @@
 }
 
 #gnb a:hover {
-  background: tomato;
+  background: blueviolet;
   color: #fff;
 }
 
@@ -150,12 +150,22 @@
   float: left;
   width: 20%;
   height: 25%;
+  padding: 30px;
+}
+
+.container article h2 {
+  margin-bottom: 5px;
+  font-size: 1.375em;
+}
+
+.container article p {
+  opacity: .7;
 }
 
 .container article:first-child {
   width: 60%;
   height: 50%;
-  background: url(../../images/pic1.jpg) 0 0 no-repeat;
+  background: url(../../images/pic1.jpg) 0 100% no-repeat;
   background-size: cover;
 }
 
@@ -164,74 +174,93 @@
   bottom: 2px;
   right: 0;
   color: #fff;
-  font-size: 5em;
+  font-size: 10vw;
+  line-height: 0.7;
 }
 
 .container article:nth-child(2) {
   width: 40%;
   background: #fff;
-  position: relative;
-  padding: 10px 20px;
-}
-
-.container article:nth-child(2) h2 {
-  top: 0;
-  left: 0;
-  color: #000;
-  font-size: 3em;
-}
-
-.container article:nth-child(2) p {
-  opacity: .7;
 }
 
 .container article:nth-child(3) {
-  background: lightblue;
-}
-
-.container article:nth-child(3) p {
-  position: absolute;
-  left: 20px;
-  top: 50px;
-  font-size: 1.5em;
+  background: #c6f6fa;
 }
 
 .container article:nth-child(4) {
-  background: rgba(0, 0, 0, 0.25);
+  background: url(../../images/pic2.jpg) 50% 50% no-repeat;
+  background-size: cover;
 }
 
 .container article:nth-child(5) {
-  background: rgba(0, 0, 0, 0.3);
+  background: url(../../images/pic3.jpg) 50% 50% no-repeat;
+  background-size: cover;
 }
 
 .container article:nth-child(6) {
   width: 40%;
-  background: rgba(0, 0, 0, 0.35);
+  background: #fff;
 }
 
 .container article:nth-child(7) {
-  background: rgba(0, 0, 0, 0.4);
+  background: url(../../images/pic4.jpg) 50% 50% no-repeat;
+  background-size: cover;
 }
 
 .container article:nth-child(8) {
-  background: rgba(0, 0, 0, 0.45);
+  background: #fff;
 }
 
 .container article:nth-child(9) {
   width: 40%;
-  background: rgba(0, 0, 0, 0.5);
+  background: url(../../images/pic5.jpg) 50% 50% no-repeat;
+  background-size: cover;
 }
 
 .container article:nth-child(10) {
-  background: rgba(0, 0, 0, 0.55);
+  background: url(../../images/pic6.jpg) 50% 50% no-repeat;
+  background-size: cover;
 }
 
 .container article:nth-child(11) {
-  background: rgba(0, 0, 0, 0.6);
+  background: #e6f5fc;
 }
 
 .container article:last-child {
-  background: rgba(0, 0, 0, 0.65);
+  background: url(../../images/pic7.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.container article .la-sync {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  color: #fff;
+  font-size: 17em;
+  -webkit-animation: ani-sync 10s linear infinite both;
+          animation: ani-sync 10s linear infinite both;
+}
+
+@-webkit-keyframes ani-sync {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes ani-sync {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 1599px) {
@@ -241,7 +270,26 @@
   #header {
     position: static;
     width: 100%;
-    height: 83px;
+    height: 30px;
+  }
+  .logo {
+    position: relative;
+    float: left;
+    padding: 0 0 0 60px;
+    height: 50px;
+  }
+  #gnb {
+    float: right;
+    margin: auto;
+  }
+  #gnb li {
+    float: left;
+  }
+  #gnb a {
+    display: block;
+    text-align: center;
+    line-height: 55px;
+    padding: 0 30px;
   }
   .container {
     overflow: auto;
@@ -315,16 +363,32 @@
   }
   .container article:first-child, .container article:nth-child(2) {
     width: 100%;
+    height: 28%;
+  }
+  .container article:nth-child(3) {
+    display: none;
   }
   .container article:nth-child(n+3) {
     /* 3번째 이후 모든 요소 */
     width: 50%;
+  }
+  .container article:nth-child(n+2) {
+    height: 18%;
   }
 }
 
 @media screen and (max-width: 639px) {
   #header {
     height: 120px;
+  }
+  #header .logo {
+    position: absolute;
+    top: 10px;
+    left: 195px;
+  }
+  #header #gnb {
+    position: absolute;
+    margin: 45px;
   }
   .util {
     display: none;
@@ -345,10 +409,25 @@
     position: fixed;
     top: 50%;
     left: 50%;
+    z-index: 1000;
     width: 80%;
     height: 80vh;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+  }
+  #header .logo {
+    top: 26px;
+    left: 70px;
+  }
+  #header #gnb {
+    position: absolute;
+    top: 100px;
+    background: #d6d6d6;
+  }
+  #header #gnb li {
+    width: 300px;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid black;
   }
   .container {
     height: auto;
