@@ -21,9 +21,10 @@ $lightpink: lightpink;
         .logo {
             a {
                 display: block;
-                width: 137px; height: 109px;
+                width: 160px; height: 80px;
                 margin: 0 auto;
-                background: url(../../images/logo.jpg) 0 0 no-repeat;
+                background: url(../../images/logo1599up.jpg) 50% 50% no-repeat;
+                background-size: contain;
                 text-indent: -9999px;
             }
         }
@@ -92,7 +93,7 @@ $lightpink: lightpink;
     margin: 75px auto 0;
     a {
         display: block;
-        padding: 8px 0 8px 64px;
+        padding: 8px 0 8px 55px;
         &:hover {
             background: blueviolet;
             color: $w;
@@ -139,20 +140,20 @@ $height : 25%;
             font-size: 1.375em;
         }
         p {
-            opacity: .7;
+            opacity: .9;
         }
         &:first-child {
             width: $width * 3; height: $height * 2;
-            background: url(../../images/pic1.jpg) 0 100% no-repeat;
+            background: url(../../images/pic1.jpg) 62% 100% no-repeat;
             background-size: cover;
             strong {
                 position: absolute;bottom: 2px;right: 0;
-                color: $w; font-size: 10vw;line-height: 0.7;
+                color: $w; font-size: 90px;line-height: 0.7;
             }
         }
           &:nth-child(2){
             width: $width * 2;
-            background: $w;
+            background: $w
           }
           &:nth-child(3){
             background: #c6f6fa;
@@ -186,51 +187,63 @@ $height : 25%;
             background-size: cover;
           }
           &:nth-child(11){
-            background: #e6f5fc;
+            background: #c6f6fa;
           }
           &:last-child {
             background: url(../../images/pic7.jpg) 50% 50% no-repeat;
             background-size: cover;
           }
-          .la-sync{
+          .la-swimmer{
               position: absolute;
-              bottom: -50px;right: -50px;
+              bottom: -50px; /*right: -50px;*/
               color: $w; font-size: 17em;
-            //   애니메이션 
-              animation: ani-sync 10s linear infinite both;
+            //   애니메이션  부드럽게 
+              animation: ani-sync 3s linear infinite both;
           }
           @keyframes ani-sync{
-              0%{transform: rotate(0);}
-              100%{transform:rotate(360deg);}
+              0%{transform: rotateX(0);}
+              100%{transform:rotateY(360deg);}
           }
     }
 }
 
 // width 1599px 이하일 경우 (1280px < w < 1599px)
 @media screen and (max-width: 1599px) {
+    $height:80px;
     .wrap {
         padding-left: 0;
     }
     #header {
         position: static;
-        width: 100%; height: 30px;
-    }
+        width: 100%; height: $height;
     .logo{
         position: relative;
         float:left;
-        padding: 0 0 0 60px;
-        height: 50px;
+        padding: 0 0 0 50px;
+        height: $height;
+        a {
+            display: block;
+            width: 230px; height: 80px;
+            margin: 0 auto;
+            text-indent: -9999px;
+        }
     }
+}
     #gnb{
         float: right;
-        margin: auto;
+        margin: 0 auto;
+        height: $height;
+        ul{
+            height: $height;
+        }
         li{
             float:left;
+            height: $height;
         }
         a{
             display: block;
             text-align: center;
-            line-height: 55px;
+            line-height: $height;
             padding: 0 30px;
         }
     }
@@ -299,7 +312,7 @@ $height : 25%;
             &:nth-child(9) {
                 width: $width;
             }
-            &:nth-child(4), &:nth-child(7), &:nth-child(10), &:last-child {
+            &:nth-child(4), &:nth-child(7), &:nth-child(10) {
                 display: none;
             }
         }
@@ -370,6 +383,8 @@ $height : 25%;
         position: fixed; top: 50%; left: 50%; z-index: 1000;
         width: 80%; height: 80vh;
         transform: translate(-50%, -50%);
+        background: $w;
+        opacity: .7;
         .logo{
             top: 26px;
             left: 70px;
@@ -377,11 +392,14 @@ $height : 25%;
         #gnb{
             position: absolute;
             top: 100px;
-            background: rgb(214, 214, 214);
+            // background: rgb(214, 214, 214);
             li{
                 width: 300px;
                 padding: 10px 0 10px 0;
                 border-bottom: 1px solid black;
+            }
+            a{
+                line-height: 55px;
             }
         }
     }
@@ -395,5 +413,9 @@ $height : 25%;
                 display: none;
             }
         }
+    }
+    // 모바일 버전에서는 글씨 없애주기
+    .container article:first-child strong {
+        display: none;
     }
 }
