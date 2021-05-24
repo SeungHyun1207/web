@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide slick</title>
+    <link rel="stylesheet" href="./dist/vender/slick/slick.css">
+    <link rel="stylesheet" href="./dist/vender/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <style>
+        *{
+            margin: 0; padding: 0;
+        }
+        .slide-intro {
+            width: 70%; margin: 0 auto;
+            background: red;
+        }
+        .slide-intro .slick-arrow {
+            width: 100px; height: 100px;
+            background: rgba(0,0,0, .7);
+        }
+        .slide-intro .slick-next {
+            right: -65px;
+        }
+        .slide-intro .slick-next:before {
+            font-family: 'Line Awesome Free';
+            font-weight: 900; font-size: 50px;
+            content: "\f105";
+        }
+        .slide-intro .slick-prev {
+            left: -65px; z-index: 100;
+        }
+        .slide-intro .slick-prev:before {
+            font-family: 'Line Awesome Free';
+            font-weight: 900; font-size: 50px;
+            content: "\f104";
+        }
+
+        .slide-intro .slick-list {
+            margin: 0 -20px;
+        }
+        .slide-intro .slick-slide {
+            padding: 0 20px;
+        }
+        img {
+            width: 100%; height: 500px;
+            object-fit: cover; object-position: 50% 50%;
+        }
+        .slide-intro .slick-dots li button {
+            background: #000; border-radius: 50%;
+            opacity: 0.5;
+        }
+        .slide-intro .slick-dots li.slick-active button {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-intro">
+        <a href="#"><img src="./images/mainslide-1.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-2.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-3.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-4.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-1.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-2.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-3.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-4.jpg" alt=""></a>
+      </div>
+
+
+      <div class="slide-banner">
+        <a href="#"><img src="./images/mainslide-1.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-2.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-3.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-4.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-1.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-2.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-3.jpg" alt=""></a>
+        <a href="#"><img src="./images/mainslide-4.jpg" alt=""></a>
+      </div>
+
+     
+    
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script src="./dist/vender/slick/slick.min.js"></script>
+      <script>
+          $('.slide-intro').slick({
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
+    });
+
+    $('.slide-banner').slick({
+        
+    });
+      </script>
+</body>
+</html>

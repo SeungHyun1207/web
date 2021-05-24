@@ -1,0 +1,306 @@
+@charset "UTF-8";
+@import 'reset', 'main', 'contents', 'variables', 'mixins';
+
+// 공통 레이아웃, 공통 디자인
+#header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    justify-content: space-between;
+    padding: 0;
+    .nav-item > a {
+        color: $w;
+    }
+    &.sticky {
+        background: $w; border-bottom: 1px solid #eee;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.02);
+        a {
+            color: $b;
+        }
+    }
+}
+.navbar-brand {
+    display: block;
+}
+.nav-util {
+    display: none;
+    color: $w;
+}
+// 가로사이즈 768px 이상일 경우
+@media screen and (min-width: 768px) {
+    .nav-util {
+      display: block;
+    }
+  }
+
+  #gnb {
+    text-align: center;
+    .nav-depth1 > li {
+        position: relative;
+        &:hover, &:focus { 
+            border-bottom: 3px solid tomato;
+        }
+        > a {
+            display: block;
+            height: 55px; line-height: 55px;
+            padding: 0 25px;
+        }
+    }
+    .nav-depth2 {
+        position: absolute;top: 55px;left: 0;right: 0;
+        overflow: hidden; padding-top: 20px;
+        height: 0; opacity: 1; transition: all .5s;
+        a {
+            display: block;
+            padding: 4px 0;
+            color: $b;
+            &:hover, &:focus { 
+                color: tomato !important;
+                // background: red;
+            }
+        }
+    }
+    .nav-bg {
+        position: absolute;top: 55px;left: 0;right: 0;
+        height: 0; /* 160px */ opacity: 0; transition: all .5s;
+        background-color: $w;
+        border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+    }
+
+    // 마우스 오버시
+    &.on {
+        .nav-depth2, .nav-bg {
+            height: 160px; opacity: 1;
+        }
+    }
+}
+
+.sec-g {
+    .container {
+        padding: 100px 0;
+        text-align: center;
+    }
+    .sec-tit {
+        display: inline-block;
+        margin-bottom: 70px;
+        text-align: center;
+        &::after {
+            content: '';
+            display: block;
+            height: 2px; margin-top: 10px;
+            background: $primary;
+
+        }
+    }
+}
+.sec-banner {
+    background: $gray-e;
+}
+
+.sec-contacts {
+    .row {
+        margin-bottom: 30px;
+        > div {
+            text-align: left;
+        }
+        label {
+            padding-top: 8px;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+    }
+    .alert {
+        display: none;
+    }
+}
+
+// swiper-intro
+.swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .slide-intro {
+      height: 100vh;
+      .swiper-slide {
+          position: relative;
+        
+          &.swiper-slide-active {
+              strong, p, .link-more {
+                   transform: translateY(0); opacity: 1;
+              }
+          }
+
+          &::after {
+              content: '';
+              position: absolute;top: 0; left: 0; right: 0; bottom: 0;
+              background-color: rgba($b, .4);
+          }
+      }
+      .swiper-txt {
+          position: absolute;top: 50%; left: 50%; z-index: 100;
+          transform: translate(-555px, -50%) scale(.8);
+          transform-origin: 0 50%;
+          width: 600px;
+          text-align: left;
+          strong {
+              display: block;
+              margin-bottom: 20px;
+              color: $w; font-size: 2em; 
+              letter-spacing: -1px; line-height: 1.2;
+              text-shadow: 0 0 3px rgba($b, .8);
+               transform: translateY(60px); opacity: 0;
+               transition: all .5s;
+          }
+          p {
+              color: rgba($w, .8); font-size: .8em;
+              text-shadow: 0 0 3px rgba($b, .8);
+              transform: translateY(60px);opacity: 0;
+              transition: all .5s .5s;
+          }
+          .link-more {
+              display: inline-block;
+              padding: 7px 10px 5px; margin-top: 30px;
+              background-color: $b; color: $w;
+              font-size: .6em;
+              opacity: .6;
+              transform: translateY(60px);opacity: 0;
+              transition: all .5s 1s;
+          }
+      }
+  }
+
+// slide-bnr1
+.sec-banner {
+    overflow: hidden;
+}
+.slide-bnr1 {
+    overflow: visible;
+    margin-bottom: 100px;
+    .swiper-button-next {right: -70px;}
+    .swiper-button-prev {left: -70px;}
+    .swiper-slide {
+        position: relative;
+        display: flex; justify-content: center; align-items: center;
+        height: 200px;
+        background: $w; 
+        transition: all .3s;
+        &.swiper-slide-active {
+            z-index: 100;
+            background: purple; color: $w;
+            transform: scale(1.2);
+        }
+        &::after {
+            content: '';
+            position: absolute;top: 0;left: 0;right: 0;bottom: 0;
+            border: 1px solid rgba($b, .03);
+        }
+    }
+    
+}
+
+.swiper-wrap {
+    position: relative;
+    .swiper-button-next {right: -70px;}
+    .swiper-button-prev {left: -70px;}
+}
+.slide-bnr2 {    
+    .swiper-slide {
+        position: relative;
+        display: flex; justify-content: center; align-items: center;
+        flex-direction: column;
+        height: 200px; padding: 20px;
+        background: $w; 
+        strong {
+            position: relative; z-index: 150;
+            font-size: 1.3em; font-weight: normal;
+             transform: translateY(0);
+             transition: opacity .5s .2s;
+        }
+        p {
+            display: none;
+            position: relative; z-index: 150;
+            margin-top: 20px; font-size: 0.8em;
+            opacity: 0; transition: opacity .1s .4s;
+        }
+        // 일반적인 경우
+        &::before {
+            content: '';
+            position: absolute;top: 200px;left: 0;right: 0;bottom: 0;
+            background: purple;
+            transition: all .5s;
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;top: 0;left: 0;right: 0;bottom: 0;
+            border: 1px solid rgba($b, .03);
+        }
+    }
+}
+// width 1024px 이상일 경우에만 보라색 배경이 들어가야 해
+@media screen and (min-width: 1024px) {
+    .slide-bnr2 {
+        .swiper-slide {
+            // 활성화 됐을 경우
+            &.swiper-slide-active {
+                color: $w;
+                &::before {
+                    top: 0;
+                }
+                strong {
+                    transform: translateY(-10px);
+                }
+                p {
+                    display: block;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+  }
+
+
+#footer {
+    padding: 80px 0;
+    background: #555;  color: $w;
+} 
+
+#scrollUp {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: #555;
+    color: #fff; font-size: 0;
+    &:before {
+        font-family: 'Line Awesome Free';
+        font-weight: 900; font-size: 1.5rem;
+        content: "\f106";
+    }
+  }
