@@ -1,6 +1,7 @@
 $(document).ready(function(){
   //전역변수
-  let $window = $(window)
+  let $window = $(window),
+      winScroll = $(window).scrollTop()
 
   //gnb
   $('#gnb').each(function(){
@@ -14,7 +15,7 @@ $(document).ready(function(){
     $this
     .removeClass('on')
     //mouseover, 포커스 들어갔을 때
-    .on('mouseenter foucesin',function(){
+    .on('mouseenter focussin',function(){
       //#gnb에게 on클래스 추가
       $this.addClass('on')
       //#header에게 sticky 클래스 추가
@@ -22,10 +23,10 @@ $(document).ready(function(){
     })
     //gnb가 없어지게 하는 코드
     //마우스가 떠낫을 때
-    .on('mouseleave fouceout', function(){
+    .on('mouseleave focusout', function(){
       $this.removeClass('on')
       // 만약 (스크롤 값 < 50) 이라면
-      if($window.scrollTop() < 50){
+      if(winScroll < 50){
         // #header에게 sticky 클래스 삭제
         $header.removeClass('sticky')
       }
@@ -87,6 +88,24 @@ $(document).ready(function(){
         scrollTop : $(hash).offset().top - 20 /* gnb의 높이값을 빼주삼 */
       }, 800)
     }
+  })
+
+  // 스크롤 시 오브젝트 애니메이션
+  $(window).scroll(function(){
+    $('.ani-scroll').each(function(){
+
+      let $this = $(this),
+           pos = $(this).offset().top,
+           winScroll = $(window).scrollTop()
+
+    // 만약 (windScroll > pos) 경우
+    if(winScroll + 600 > pos){
+       $this.addClass('ani-top')
+    }
+
+    // .ani-scroll 에게 .ani-top
+
+    })
   })
 
   // scrollUp.js
@@ -185,4 +204,10 @@ $(document).ready(function(){
       },
     },
   });
+
+  //wow
+  new WOW().init();
+
+  //include
+  includeHTML();
 });

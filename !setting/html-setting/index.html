@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="./dist/vender/wow/animate.css">
     <link rel="stylesheet" href="./dist/fonts/fonts.css"> <!-- webfonts 설정 -->
     <link rel="stylesheet" href="./dist/css/comm.css">
 
@@ -34,7 +35,7 @@
     </div>
 
     <div class="wrap">
-        <header id="header" class="navbar navbar-expand-md">
+        <header id="header" class="navbar navbar-expand-md "><div w3-include-html="header.html"></div>
             <div class="container">
                 <h1>
                     <a class="navbar-brand" href="#">Navbar</a>
@@ -138,8 +139,8 @@
                 <!-- w100% -->
                 <div class="container">
                     <!-- w고정가운데정렬 -->
-                    <h2 class="sec-tit">공지사항</h2>
-                    <div class="sec-cont">
+                    <h2 class="sec-tit ani-scroll">공지사항</h2>
+                    <div class="sec-cont ani-scroll">
                         <!-- tab -->
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs">
@@ -169,7 +170,7 @@
                 <!-- w100% -->
                 <div class="container">
                     <!-- w고정가운데정렬 -->
-                    <h2 class="sec-tit">배너</h2>
+                    <h2 class="sec-tit wow animate__bounce">배너</h2>
                     <div class="sec-cont">
 
                         <!-- slide-bnr1 -->
@@ -190,7 +191,7 @@
                         </div>
 
                         <!-- slide-bnr2 -->
-                        <div class="swiper-wrap">
+                        <div class="swiper-wrap wow animate__bounce">
                             <div class="swiper-container slide-bnr2">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
@@ -283,9 +284,7 @@
                 </div>
             </section>
         </div>
-        <footer id="footer">
-            <div class="container">풋터</div>
-        </footer>
+        <footer id="footer" include-html="./layout/footer.html"></footer>
     </div>
 
 
@@ -294,6 +293,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./dist/vender/jquery.scrollUp.min.js"></script>
+    <script src="./dist/vender/wow/wow.min.js"></script>
+    <script src="./dist/vender/includ.js"></script>
     <script src="./dist/js/form-submission-handler.js"></script>
     <script src="./dist/js/comm.js"></script>
 </body>
