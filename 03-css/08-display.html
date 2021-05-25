@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display : css</title>
+</head>
+<body>
+    <h1>css display</h1>
+
+    <h2>1.inline-block</h2>
+    <p> - 인라인 블록 요소는 가로배치 시 사용하지 않는다.</p>
+    <!-- ul>li*4>a[menu$]{href="#"} -->
+    <ul>
+        <li><a href="#">탑</a></li>
+        <li><a href="#">아우터</a></li>
+        <li><a href="#">팬츠</a></li>
+        <li><a href="#">악세서리</a></li>
+    </ul>
+
+    <style>
+        /* 카테고리 만드는 방법 */
+        ul{
+            /* li 없애주는 방법 */
+            list-style: none;
+        }
+        ul li{
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        ul a{
+            display: block;
+            width: 100px; height: 50px;
+            background: tomato;
+            color: #fff; 
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+
+    <hr>
+    <h2>2. display : none</h2>
+
+    <div class="layer">레이어 팝업</div>
+    
+    <style>
+        .layer{
+            display: none;
+            width:300px; height: 300px;
+            background: cyan;
+        }
+    </style>
+
+</body>
+</html>

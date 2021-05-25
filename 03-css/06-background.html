@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background : css</title>
+</head>
+<body>
+    
+    <h1>css background</h1>
+
+    <h2>1. background-color</h2>
+
+    <div class="box1"></div>
+
+    <style>
+        .box1{
+            /* rgb는 색깔이지만 rgba는 a = opacity 의미로 투명도이다. 
+            0.5라고 써도 되지만 .5라고 써도 된다.*/
+            background-color: rgba(255, 0, 0, .5);
+            height: 200px; width: 200px;
+            border: 3px solid blue;
+        }
+    </style>
+    <hr>
+    <h2>2. background-images</h2>
+
+    <h1 class="logo">
+        <a href="#">네이버</a>
+    </h1>
+
+    <style>
+        .logo a{
+            display: block;
+            width: 434px; height: 130px;
+            background-image: url(./images/logo-naver.jpeg);
+            text-indent: -9999px;              /*텍스트를 저 옆으로 밀어버린다.*/
+        }
+    </style>
+    <hr>
+    <h2>3.background-repeat</h2>
+
+    <div class="box2"></div>
+    <style>
+        .box2{
+            height:500px;
+            border: 5px solid tomato;
+            background-image: url(./images/logo-naver.gif);
+            background-repeat: no-repeat;   /*repeat-x = x축으로만 repeat-y = y축으로만  없애고 싶다면 no-repeat*/ 
+            background-position: 50% 50%;
+        }
+    </style>
+
+    <h2>4. background-position</h2>
+
+    <h1 class="logo2">
+        <a href="#" class="img-g">네이버</a>
+    </h1>
+    <i class="img-g cio-live">live</i>
+
+    <style>
+        /* 공통으로 들어가는 것은 class에 img-g라는 이름을 똑같이 넣어주고 밑의 스타일처럼 중복되는 코드들을 넣어준다. */
+        .img-g{
+            display: block;
+            background-image: url(./images/sp_main_153a02.png);
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+        }
+        .logo2 a{
+            width: 442px; height:104px;
+            background-position: 0 -317px;
+            border: 5px solid lightblue;
+        }
+        .cio-live{
+            width: 95px; height: 42px;
+            background-position: -539px 489px;
+            border: 5px solid lightpink;
+            border-radius: 10%;
+        }
+    </style>
+
+    <hr>
+    <h2>5. background-attachment</h2>
+
+    <div class="box3"></div>
+    <style>
+        .box3{
+            width:1000px; height: 300px;
+            border:1px solid rgba(0, 0, 0, 3);
+            background-image: url(./images/map.jpg) no-repeat fixed -330px -100px;
+            /* background-attachment: fixed;  배경은 가만히 놔둔상태고 오브젝트만 움직일 수 있게 하는 것 */
+            background-size: contain;
+            background: url() 0 0 no-repeat;
+        }
+    </style>
+
+    <hr>
+    <h2>6.background-size</h2>
+    
+    <div class="bg-g bg-s1"></div>
+    <div class="bg-g bg-s2"></div>
+    <div class="bg-g bg-s3"></div>
+    <div class="bg-g bg-s4"></div>
+    <div class="bg-g bg-s5"></div>
+
+    <style>
+        .bg-g{
+            height: 300px;
+            background-color: red;
+            border: 5px solid #000;
+            background-image: url(./images/christmas.jpg);
+        }
+        .bg-s2{background-size: 50% auto;}
+        .bg-s3{background-size: auto 100px;}
+
+        .bg-s4{background-size: contain;} /*백그라운드 이미지를 짧은 축을 기준으로 꽉 채움*/ /*배너,버튼*/
+        .bg-s5{background-size: cover; background-position: 50% 50%;;} /*백그라운드 이미지를 긴 축을 기준으로 꽉 채움*/ /* 슬라이드 이미지에 많이 사용됨 */
+    </style>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

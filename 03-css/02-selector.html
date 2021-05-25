@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector : css</title>
+</head>
+<body>
+    <!-- 선택자 -->
+    <h1>css selectors</h1>
+
+    <style>
+        #gnb{
+            background-color: #eee;
+        }
+        .navdepth1{
+            border: 1px solid red;
+        }
+        .navdepth1 > li{
+            /* navedpth1 바로 밑에 있는 li만 잡고 싶다면 > 추가 추가를 안하게 되면
+            전체 다 잡힘 */
+            border: 1px solid blueviolet;
+        }
+        .navdepth1 > li > a{
+            background-color : orange;
+        }
+        .navdepth2 a{
+            background-color: purple;
+        }
+    </style>
+    <!-- ul>li*3>a[href=#] -->
+    <!-- ul>li*3>a[href=#]{menu1-$} -->
+    <!-- id값은 페이지 내 중복 불가능 -->
+    <!-- id값 개발자 사용 -->
+    <nav id="gnb">
+        <!-- gnb - > 서비스 전체 네비게이션 -->
+        <ul class="navdepth1">
+            <li>
+                <a href="#">menu1</a>
+                <ul class="navdepth2">
+                    <li><a href="#">menu1-1</a></li>
+                    <li><a href="#">menu1-2</a></li>
+                    <li><a href="#">menu1-3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu2</a>
+                <ul class="navdepth2">
+                    <li><a href="#">menu2-1</a></li>
+                    <li><a href="#">menu2-2</a></li>
+                    <li><a href="#">menu2-3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu3</a>
+                <ul class="navdepth2">
+                    <li><a href="#">menu3-1</a></li>
+                    <li><a href="#">menu3-2</a></li>
+                    <li><a href="#">menu3-3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+</html>

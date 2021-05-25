@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상선택자 : css</title>
+</head>
+<body>
+    <h1>css가상선택자</h1>
+    
+    <h2>1. 상태 선택자</h2>
+
+    <a href="#" class="link_hover">마우스 오버</a>
+    <!-- a태그에 가로세로 값이 안들어가는 이유 인라인 방식이라서 -->
+    <!-- 따라서 block방식으로 바꿔주어야 한다. -->
+    <style>
+        .link_hover{
+            display: block;
+            width: 200px; height: 100px;
+            background-color: tomato;
+            text-align: center; color: #fff;
+            line-height: 100px;
+            text-decoration: none;
+        }
+        /* 마우스를 올려놓았을 때 색 변경 */
+        .link_hover:hover{
+            background-color: blue;
+        }
+    </style>
+
+    <hr>
+
+    <form action="" method="POST">
+        <fieldset>
+            <legend>회원가입</legend>
+            <label for="id">아이디</label>
+            <input type="text" name="id" id="id" class=inp>
+            <br>
+            <label for="pw">비밀번호</label>
+            <input type="password" name="pw" id="pw" class="inp">
+            <br> 
+        </fieldset>
+    </form>
+    
+    <style>
+        .inp{
+            width: 100px; height: 30px;
+            border: 1px solid #999;
+        }
+        .inp:focus{
+            background-color: #eee;
+            border:1px solid tomato; outline:none;
+        }
+    </style>
+
+    <hr>
+
+    <h2>2.가상선택자</h2>
+
+    <ul class="lst1">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+    </ul>
+
+    <!-- 네이버 TV에 모양과 메일의 메일그림을 div class 하기엔 너무 많기에 가상클래스로 만드는게 편하다. -->
+    <style>
+        .lst1 li::before{
+            content: '<::before 가상클래스>';
+        }
+        .lst1 li::after{
+            content: "<::after 가상 클래스>";
+        }
+        
+        .lst1 ::before{
+            content:'앞';
+            color: red;
+        }
+        .lst1 ::after{
+            content:'뒤';
+            color: blue;
+        }
+        .lst1 a::before{
+            content:'+';
+        }
+        .lst1 a::after{
+            content:'*';
+        }
+
+    </style>
+    
+<!-- footer 작업할 때 사용 -->
+    <ul class="lst2">
+        <li>회사소개</li>
+        <li>인재채용</li>
+        <li>이용약관</li>
+        <li>개인정보처리방침</li>
+    </ul>
+
+    <style>
+        .lst2{
+            list-style: none;
+            display:inline;
+        }
+        /* 옆으로 붙게 하는 방법 - inline-block  중요!!!*/
+        .lst2 li{
+            display: inline-block;
+        }
+        /* 이미지로 |를 넣는 방법 */
+        .lst2 li::after{
+            display: inline-block;
+            content:'';
+            width:2px; height: 16px;
+            background-color: red;
+            vertical-align: middle;
+            margin: -3px 5px 0 10px;
+        }
+        /* last-child 는 li에 있는 마지막 글자 개인정보처리방침 뒤에 붙이는 것 */
+        .lst2 li:last-child::after{
+            display: none;  /* 이 부분은 마지막 선이 안보이게 해주는 것 */
+            
+        }
+    </style>
+
+    <hr>
+
+    <h2>3.순서 선택자</h2>
+
+    <!-- :first-letter	요소의 첫글자 -->
+    <!-- :first-line	요소의 첫줄 -->
+    <!-- :first-child	같은 요소 중 첫번째 요소 -->
+    <!-- :last-child	같은 요소 중 마지막 요소 -->
+    <!-- :nth-child(n)	같은 요소 중 n번째 요소 -->
+    <!-- :nth-child(2n)	같은 요소 중 2의 배수 요소 -->
+    <!-- :nth-child(-n+5)	같은 요소 중 1번째부터 5번째까지 요소 -->
+    <!-- :nth-child(n+5)	같은 요소 중 5번째 이후 모든 요소 -->
+    <!-- :nth-child(n+5):nth-child(-n+10)	같은 요소 중 5번째부터 10번째까지 모든 요소 -->
+    <!-- :nth-last-child(5)	같은 요소 중 마지막에서 5번째 요소 -->
+    <!-- :nth-child(even)	같은 요소 중 홀수 요소 -->
+    <!-- :nth-child(odd)	같은 요소 중 짝수 요소 -->
+    <!-- :nth-of-type(n)	선택한 타입의 요소 중 n번째 요소 -->
+    <!-- ::before	요소 안 맨 앞에 배치될 요소 (마크업에는 없는 가상 요소) -->
+    <!-- ::after	요소 안 맨 뒤에 배치될 요소 (마크업에는 없는 가상 요소) -->
+    <ul class="lst3">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+
+    <style>
+        .lst3 li{
+            margin-bottom: 5px;
+        }
+        /* first-child는 첫번째만 해당 */
+        .lst3 li:first-child{background-color: orange;}
+        .lst3 li:last-child{background-color: blue;}
+        /* nth-child() 괄호안에 몇번째를 할 건지 숫자로 적어주면 된다. */
+        .lst3 li:nth-child(2){background-color:lightpink;}
+        .lst3 li:nth-child(3){background-color: purple  ;}
+    </style>
+
+</body>
+</html>
+36.8

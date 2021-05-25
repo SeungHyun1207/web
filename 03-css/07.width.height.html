@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>width height : css</title>
+</head>
+<body>
+    <h1> css width height </h1>
+    <!-- 모바일 기준 -->
+    <!-- width : %, em(상대값) 단위 사용  -->
+    <!-- height : px,em (절대값) 단위 사용 -->
+    <!-- 전체화면 : width : 100%; height: 100vh -->
+
+    <h2>1. 높이의 상대값</h2>
+
+    <div class="box1">
+        <div class="box2">
+            <div class="box3">높이의 상대값</div>
+        </div>
+    </div>
+    <style>
+        /*  %단위는 내 부모 기준  */
+        .box1{ height:100%; border: 3px solid red;}
+        .box2{ border: 3px solid blueviolet;}
+        /* vh단위 기준은 뷰포트(브라우저) */
+        .box3{ height:100vh; border: 3px solid lightblue;}
+    </style>
+
+    <hr>
+    <h2>2. max-width : 최대 가로 사이즈</h2>
+
+    <div class="max-width">max-width</div>
+
+    <style>
+        .max-width{
+            height: 100px;
+            max-width:  500px;
+            margin: 0 auto;
+            background-color: tomato;
+        }
+    </style>
+
+    <hr>
+    <h2>3. min-width : 최소 가로 사이즈</h2>
+    <div class="min-width">min-width</div>
+
+    <style>
+        .min-width{
+            /* width - 100% 생략 */
+            height:100px;
+            min-width: 500px; max-width:800px;
+            /* default값 */
+            /* max-width : none */
+            /* min-width : 0 */
+            max-width:none;
+            margin: 0 auto;
+            background: lightblue;
+        }
+    </style>
+
+    <hr>
+    <h2>4. margin 가운데 정렬 </h2>
+    <div class="margin-auto">가운데 정렬</div>
+
+    <style>
+        .margin-auto{
+            width: 70%;
+            height: 100px;
+            margin: 0 auto; 
+            background: lightpink;
+            text-align: center;
+            line-height: 100px;
+            background: url(./images/bg-repeat.jpg) no-repeat 50% 50%;
+            background-size: auto 50%;
+        }
+    </style>
+
+    <hr>
+    <h2>5. padding </h2>
+    <a href="#" class="link1">회원가입</a>
+    <a href="#" class="link1">확인</a>
+    <a href="#" class="link1">취소</a>
+
+    <style>
+        .link1{
+            display: inline-block;
+            width: 120px; height: 50px;
+            border: 1px solid #666;
+            border-radius:5px;
+            background: tomato;
+            color: #fff;
+            text-align:center;
+            line-height: 50px;
+            text-decoration: none;
+
+        }
+    </style>
+
+    <a href="#" class="link2">회원가입</a>
+    <a href="#" class="link2">확인</a>
+    <a href="#" class="link2">취소</a>
+    <style>
+        .link2{
+            display: inline-block;
+            padding: 7px 30px 10px; 
+            border: 1px solid #76c6e0;
+            border-radius: 5px;
+            background: lightblue;
+            text-align:center;
+            line-height: 50px;
+            text-decoration: none;
+        }
+    </style>
+
+    <hr>
+    <h2>6. box-model</h2>
+
+    <div class="wrap">
+        <header>헤더</header>
+        <div class="slide">슬라이드</div>
+        <div class="container">컨텐츠</div>
+        <footer>풋터</footer>
+    </div>
+
+    <style>
+        .wrap{
+            width: 1200px; margin:0 auto;
+            border:1px solid #0000;
+        }
+        header{
+            height: 70px;
+            padding: 10px 0;
+            border-bottom: 10px solid #000;
+            background: lightblue;
+        }
+        .slide{
+            height: 300px;
+            background: lightpink;
+        }
+        .container{
+            height: 160px;
+            padding: 10px 0; 
+            border-top:10px solid  lightseagreen;
+            border-bottom:10px solid lightskyblue;
+            background: orange;
+            box-sizing: border-box;
+        }
+        footer{
+            height: 100px;
+            background: lightgray;
+        }
+    </style>
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

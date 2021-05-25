@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation : css</title>
+</head>
+<body>
+    <h1>css animation</h1>
+    <div class="wrap">
+        <div class="box1">1</div>
+    </div>
+    <style>
+        .wrap{
+            position: relative;
+            width: 500px; height: 500px;
+            background: #eee;
+        }
+        .box1{
+            position:absolute;
+            width: 100px; height: 100px;
+            background: red;
+            /* 에니메이션을 하려면 이름을 지정해줘야 한다. */
+            animation-name: ani-box ;
+            /* 에니메이션과 duration은 꼭 넣어주어야 한다. */
+            animation-duration: 4s;
+            /* 계속 재생 */
+            /* animation-iteration-count: infinite; */
+            /* 역으로 되돌아오는 애니메이션 */
+            /* animation-direction: alternate-reverse; */
+            /* 애니메이션이 나갓을 때 멈추게 하는 코드
+            ex) 우주선이 나갓다가 돌아오지않고 나간 상태로 유지하는 코드 */
+            animation-fill-mode: forwards;
+            animation: ani-box 4s   infinite alternate-reverse forwards;
+        }
+        /* 상자 에니메이션 */
+        @keyframes ani-box {
+            0% {top: 0; left: 0; background: red}
+            25% {top: 0; left: 400px; background: blue}
+            50% {top: 400px; left: 400px; background: purple}
+            100% {top: 400px; left: 0px;  background: lightseagreen}
+            /* 100% {top: 0px; left: 0px; background: pink} */
+        }
+    </style>
+</body>
+</html>

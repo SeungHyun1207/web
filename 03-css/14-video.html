@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullpage video : css</title>
+</head>
+<body>
+    <!-- <h1>fullpage</h1> -->
+    <div class="wrap">
+        <video src="./images/mv-iu-아이_-celebrity-wo.gl.mp4" controls 100%></video>
+    </div>
+    <style>
+        *{
+            margin: 0;
+        }
+        .wrap{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        video{
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: 50% 50%;
+        }
+    </style>
+</body>
+</html>

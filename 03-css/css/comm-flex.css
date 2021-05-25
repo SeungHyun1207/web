@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+/* reset */
+*{
+    margin: 0; 
+    padding: 0;
+    font-size: 14px;
+    color: black;
+    line-height: 1.5;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+.wrap{
+    width: 1200px;
+    margin: auto;
+    background: #eee;
+}
+header{
+    /* 가로정렬 */
+    display: flex;
+    /* justify-content: space-between; <<< 왼쪽글자는 왼쪽으로 오른쪽 글자는 오른쪽으로 밀어진다. */
+    justify-content: space-between;
+    background: lightblue;
+    height: 100px;
+}
+
+/* 가운데 정렬 시작 */
+header h1{
+    display: flex;
+    align-items: center;
+}
+header nav{
+    display: flex;
+    align-items: center;
+}
+header nav ul{
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    background: blue;
+}
+/* 가운데 정렬 끝 */
+.slide ul{
+    display: flex;
+    width: 300%;
+}
+.slide li{
+    width:33.333%;
+    height: 300px;
+    border:1px solid black; 
+}
+.container{
+   display: flex;
+   justify-content: space-between;
+}
+.container section{
+    width: 30%;
+    height: 200px;
+    border:1px solid blue;
+}
+footer{
+     /* 가로정렬 */
+    display: flex;
+     /* 간격을 알맞게 떨어지게 해주는 코드 */
+    justify-content: space-between;
+    height: 100px;
+    background: #bbb;
+}
+footer *{
+    display: flex;
+    /* 세로정렬 */
+    align-items: center;
+}

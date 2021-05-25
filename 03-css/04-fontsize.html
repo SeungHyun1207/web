@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> css : fontsize</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+
+    <style>
+        body{
+            /* 웹디자인기능사 리셋기능 8가지 이걸 외우고 가면 시험 편함 */
+            /* 기준 폰트 크기 조절 */
+            font-size: 14px;
+            line-height: 1.5;
+            color: #000;
+            text-decoration: none;  /*밑줄 없애기*/
+            list-style: none; /*ul/li같은 점 없애기*/
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+    <h1>css font size</h1>
+
+    <h2>1. px단위 (절대값) </h2>
+    <div class="size1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eos corporis voluptatem quod maxime mollitia amet, minima deleniti ad corrupti? Nemo nobis doloremque ex obcaecati vero rem quos voluptas sequi?
+    </div>
+    <style>
+        .size1{
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+
+    <h2>2. em단위 (상대값) </h2>
+    <ul>
+        <li>안녕하세요.<b>더조은</b>입니다.</li>
+        <li><b>더조은</b>컴퓨터에서 공지합니다.</li>
+        <li><b>웹디자인(퍼블리싱)</b>오픈합니다.</li>
+        <li><b>웹디자인(퍼블리싱)</b>오픈합니다.</li>
+    </ul>
+    <style>
+        ul li:first-child{font-size: 14px;}
+        ul li:first-child b{font-size: 28px;}
+
+        ul li:nth-child(2){font-size: 0.825em;}
+        ul li:nth-child(2) b{font-size: 1.75em;}
+
+        /* em단위는 소수점 세자리까지만 써도 가능 */
+        ul li:nth-child(3){font-size: 2em;}  /* 28px */
+        ul li:nth-child(3) b{font-size: 1em;} /* 28px */
+
+        ul li:nth-child(4){font-size: 2em;}  /* 28px */
+        ul li:nth-child(4) b{font-size: 2rem;} /* 28px */
+        /* rem 단위는 html,body 폰트 사이트 기준 */
+        /* em단위라면 부모단위 rem은 따로따로 해주고 싶을 때  */
+    </style>
+
+    <h2>3. vw 단위 (상대값) </h2>
+    <!-- vw -> viewport의 weight값 -->
+    <!-- vh -> viewport의 height값 (pull page로 사용 가능 100vh)-->
+    <p>가나다라마바사</p>
+    <style>
+        p{
+            font-size: 10vw;
+            background:tomato;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+
+
+</body>
+</html>

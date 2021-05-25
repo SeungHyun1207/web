@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position : css</title>
+</head>
+<body>
+    <h1>css position</h1>
+
+    <div class="wrap">
+        <header class="fixed">fixed</header>
+        <div class="absolute">absolute</div>
+        <div class="absolute-center">absolute-center</div>
+    </div>
+    
+    <style>
+        .absolute-center{
+            position: absolute;
+            top: 50%; left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            width: 100px;
+            height: 100px;
+            background: lightgreen;
+        }
+        .absolute{
+            position: absolute;
+            top:0; right:0;
+            height: 100px;
+            background: tomato;
+        }
+        .wrap{
+            position: relative;
+            width: 500px;
+            height: 1000px;
+            margin: 0 auto;
+            background: #bbb;
+        }
+        .fixed{
+            z-index: 1000px;
+            position: fixed;
+            top:0; left:50%;
+            margin-left: -250px;
+            width: 500px;
+            height: 50px;
+            background: lightblue;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform : css</title>
+    <style>
+        div{
+            width: 100px; height: 100px;
+            background: tomato;
+            transition: transform 1s;
+        }
+        /* 마우스를 올렸을 때 움직이는 코드 */
+        .box2{
+            transition: transform 1s;
+        }
+        .box2:hover{
+            transform: translate(50px,0);
+        }
+        .box3:hover{
+            transform: rotate(20deg);
+        }
+        .box4{
+            transform: scale(1.5,.7);
+        }
+        .box5:hover{
+            transform: skew(20deg, 30deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>css transform</h1>
+
+    <h2>1. 기본</h2>
+    <div class="box1"></div>
+
+    <h2>2. translate</h2>
+    <div class="box2"></div>
+
+    <h2>3. rotate</h2>
+    <!-- 요소를 시계방향으로 회전 -->
+    <div class="box3"></div>
+
+    <h2>4. scale</h2>
+    <!-- 요소의 크기를 줄이거나 늘림 -->
+    <div class="box4"></div>
+
+    <h2>5. skew</h2>
+    <!-- 요소의 너비를 늘리거나 줄임 -->
+    <div class="box5"></div>
+
+    <!-- <h2>6. matrix</h2> -->
+    <!-- <div class="box6"></div> -->
+
+</body>
+</html>

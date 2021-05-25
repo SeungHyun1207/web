@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* ctrl + shift + k 한줄 지우기 */
+/* reset */
+/* *은 모든 태그에 적용하는 태그 */
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #222328;
+    line-height: 1.5;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+/* 3. float 해제 : clearfix 사용 */
+.clearfix ::after{
+    display: block;
+    clear:both;
+    content:'';
+}
+.wrap{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #eee;
+}
+header{
+    /* 1.float 해제 : 높이 값을 넣는다. */
+    height: 100px;
+    background-color: lightgreen;
+}
+header h1{
+    float: left;
+}
+header nav{
+    float: right;
+}
+header nav ul{
+    overflow: auto;
+}
+header nav li{
+    float: left;
+    border:1px solid black;
+}
+.slide{
+    position: relative;
+    /* overflow: hidden; */
+    background-color: lightblue;
+    /* overflow: hidden;  << 300%된걸 hidden을 사용해 사라지게 하고
+    script로 넘기게 해준다.*/
+    height: 300px;
+}
+.slide ul{
+    position: absolute;
+    top:0; left:0;
+    /* 위의 두 문장 슬라이드 넘기는 것은 해결해보기 */
+    
+    /* 2.float 해제 : overflow : hidden */
+    overflow:auto;
+    /* 슬라이드에서 width는 기존 100%이지만 뒤로 밀리면서 3개의 슬라이드를 움직이게 하려면
+    3배인 300%를 넣으면 된다. */
+    width: 300%;
+    animation-name: slide-ani;
+    animation-duration: 3s;
+    animation: slide-ani 3s infinite alternate;
+}
+@keyframes slide-ani {
+    0% {left:0;}/* 첫번째 슬라이드 */
+    30% {left:0;}/* 첫번째 슬라이드 */
+    35% {left:-100%;}/* 두번째 슬라이드 */
+    65% {left:-100%;}/* 두번째 슬라이드 */
+    70% {left:-200%;}/* 세번째 슬라이드 */
+    100% {left:-200%;}/* 세번째 슬라이드 */
+    
+}
+.slide li{
+    float: left;
+    height: 300px;
+    width: 33.333%;
+}
+.slide li:first-child {background-color: rgb(0,0,255,.5);}
+.slide li:nth-child(2) {background-color: rgba(58, 158, 96, 0.5);}
+.slide li:last-child {background-color: rgba(208, 37, 214, 0.5);}
+.container{
+    background-color: tomato;
+    overflow: hidden;
+}
+.container section{
+    float: left;
+    width: 30%;
+    height: 200px;
+    margin-top: 10px;
+    margin-right: 5%;
+    margin-bottom: 10px;
+    border: 1px solid white;
+    background: #bbb;
+}
+/* .container section:last-child{
+    margin-right: 0;
+}*/
+/* 3의 배수 */
+.container section:nth-child(3n){
+    margin-right: 0;
+}
+/* 7번째 이후 모든 요소  */
+.container section:nth-child(n+7){
+    margin-bottom: 0;
+}
+footer{
+    overflow: auto;
+    background-color: blue;
+    padding: 10px 0;
+    text-align: center;
+}
+footer * {color: #fff;}
+footer h1{float: left;}
+footer .sns{float: right;}
+footer .copyright{display:inline-block;}
+
+#modal{
+    /* display: none; */
+    position: fixed;
+    top: 0;left: 0;right: 0;bottom: 0;
+    background: rgba(0,0,0,.3);
+}
+.box{
+    position: absolute;
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    margin:-150px 0 0 -150px;
+    border-radius: 5%;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.box .btn-close{
+    position: absolute;
+    top: -20px;right: -20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: tomato;
+    border:none;
+    text-align: center;
+    line-height: 30px;
+}

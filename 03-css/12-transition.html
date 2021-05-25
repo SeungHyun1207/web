@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition : css</title>
+</head>
+<body>
+    <h1>transition</h1>
+    <style>
+        .wrap{
+            width: 1000px;
+            background: #eee;
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            overflow: hidden;
+        }
+        .wrap div{
+            width: 100px;
+            height: 100px;
+            background: lightpink;
+            font-size: 3em; color: white;
+            text-align: center; line-height: 100px;
+        }
+        /* 박스1,2,3들을 wrap 밖으로 이동 */
+        .wrap .box1{
+            transform: translateY(150px);
+            opacity: .6;
+            transition: all 1s ease-in;
+        }
+        /* 박스를 wrap로 슬라이드처럼 나오게 하기 */
+        .wrap:hover .box1{
+            /* 기본값으로 되돌리기 */
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .wrap .box2{
+            transform: translateY(-130px) rotate(90deg);
+            opacity: .6;
+            transition: all 1s ease-out .5s;
+        }
+        .wrap:hover .box2{
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .wrap .box3{
+            transform: translateX(130px);
+            opacity: .6;
+            transition: all 1s ease-in-out 1s;
+            background-color: rgba(255,99,71,.5);
+        }
+        .wrap:hover .box3{
+            transform: translateX(0);
+            background-color: rgb(255,99,71);
+            opacity: 1;
+        }
+    </style>
+    <div class="wrap">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </div>
+</body>
+</html>
