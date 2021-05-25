@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html table</title>
+</head>
+<body>
+    <h2> 1. table 기본 </h2>
+    <!-- 테이블 전체선택 alt+shift+→+4번?-->
+    <!-- 테이블 복제 alt+shift+↓ -->
+    <table border="1" style="width: 80%;">
+        <caption>시험 점수</caption>
+        <colgroup>
+        <col width="40%">
+        <col width="30%" span="30%">
+        </colgroup>
+        <thead>
+            <tr>
+               <th scope="col">과목</th>
+               <th scope="col">Hyun</th>
+               <th scope="col">IU</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+                <th scope="row">국어</th>
+                <td>100점</td>
+                <td>100점</td>
+            </tr>
+             <tr>
+                <th scope="row">수학</th>
+                <td>100점</td>
+                <td>100점</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>총점</td>
+                <td>200점</td>
+                <td>200점</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <hr>
+
+    <table border="1" style="width: 80%;">
+        <caption>시험 점수</caption>
+        <colgroup>
+        <col width="40%">
+        <col width="30%" span="30%">
+        </colgroup>
+        <thead>
+            <tr>
+               <th scope="col">과목</th>
+               <th scope="col">Hyun</th>
+               <th scope="col">IU</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+                <th scope="row" rowspan="2">국어</th>
+                <td>100점</td>
+                <td>100점</td>
+            </tr>
+             <tr>
+                
+                <td>100점</td>
+                <td>100점</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>총점</td>
+                <td>200점</td>
+                <td>200점</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

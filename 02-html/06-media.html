@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media : html</title>
+</head>
+<body>
+    <h1>html media</h1>
+
+    <h2>1.video</h2>
+<!-- 상대경로 사용 ./ -->
+<!-- controls << 컨트롤을 해야 재생 가능 -->
+<!-- autoplay << 자동재생 -->
+<!-- muted << 음소거 / loop << 반복 -->
+    <video src="./image/mov_bbb.mp4" controls autoplay muted loop></video>
+<!-- 절대경로 사용 -->
+<!-- 해당 동영상 주소복사 후 붙여넣기 -->
+    <video src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+
+    <hr>
+    <h2>2. youtube</h2>
+    <iframe width="1280" height="720" src="https://www.youtube.com/embed/wDfqXR_5yyQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    <hr>
+    <h2>3.audio</h2>
+
+    <audio>
+        <source src="/image/봄날.mp3">
+        <source src="./image/">
+        이 브라우저는 오디오를 재생할 수 없습니다.
+
+    </audio>
+</body>
+</html>

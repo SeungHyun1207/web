@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout : html</title>
+</head>
+<body>
+    <!-- id값은 안써도 된다. id값 중복 x -->
+    <div class="wrap">
+        <header id="header">
+            <!-- 로고 -->
+            <h1>
+                <a href="#">JUST쇼핑몰</a>
+            </h1>
+            <!-- 네비게이션 -->
+            <nav>
+                <ul>
+                    <li><a href="#">menu1</a>
+                        <ul>
+                            <li><a href="#">menu1-1</a></li>
+                            <li><a href="#">menu1-2</a></li>
+                            <li><a href="#">menu1-3</a></li>
+                            <li><a href="#">menu1-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">menu2</a>
+                        <ul>
+                            <li><a href="#">menu2-1</a></li>
+                            <li><a href="#">menu2-2</a></li>
+                            <li><a href="#">menu2-3</a></li>
+                            <li><a href="#">menu2-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">menu3</a>
+                        <ul>
+                            <li><a href="#">menu3-1</a></li>
+                            <li><a href="#">menu3-2</a></li>
+                            <li><a href="#">menu3-3</a></li>
+                            <li><a href="#">menu3-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">menu4</a>
+                        <ul>
+                            <li><a href="#">menu4-1</a></li>
+                            <li><a href="#">menu4-2</a></li>
+                            <li><a href="#">menu4-3</a></li>
+                            <li><a href="#">menu4-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="slide">
+            <ul>
+                <li> 
+                    <!-- 운영성 이미지 -->
+                    <a href="#"> 
+                        <img src="./image/banner.jpg" alt="">
+                    </a>
+                </li>
+                <li> 
+                    <a href="#"> 
+                        <img src="./image/banner.jpg" alt="">
+                    </a>
+                </li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="container">
+            <!-- tab -->
+            <div class="tab">
+                <section>
+                    <h2>공지사항</h2>
+                    <div class="sec-cont">
+                        <ul>
+                            <li>
+                                <a href="#">SNS포토 리뷰 안내</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">평생 회원제 정기혜택 변경 안내 </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">카카오 플러스 친구 추가 시 무료 배송 쿠폰 쏜다!</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">생일 기념 10% 할인 쿠폰 변경 안내</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>갤러리</h2>
+                    <div class="sec-cont">
+                        <ul>
+                            <li>
+                                <a href="#"><img src="" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <!-- //tab -->
+            <!-- banner -->
+            <section>
+                <h2>배너</h2>
+                <div class="sec-cont">
+                    <!-- 배너는 클릭을해야 하니 a태그 입력 후 이미지  -->
+                    <a href="#">
+                        <img src="" alt="">
+                    </a>
+                </div>
+            </section>
+            <!-- //banner -->
+            <!-- 바로가기 -->
+            <section>
+                <h2>바로가기</h2>
+                <div class="sec-cont">
+                    <ul>
+                        <li>
+                            <a href="#"> youtube </a>
+                        </li>
+                        <li>
+                            <a href="#"> instagram </a>
+                        </li>
+                        <li>
+                            <a href="#"> facebook </a>
+                        </li>
+                        <li>
+                            <a href="#"> kakao talk </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- //바로가기 -->
+
+        </div> 
+        <footer id="footer">
+            <!-- logo클릭을 원하면 a태그  넣으면 됨 -->
+            <h1>JUST쇼핑몰</h1>
+            <div class="copyright">
+                COPYRIGHT(C) MAKESHOP ALL RIGHTS RESERVED    
+            </div>
+            <div class="sns">
+                <a href="#"> Q&A </a>
+                <a href="#"> 배송조회 </a>
+                <a href="#"> 이용약관 </a>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

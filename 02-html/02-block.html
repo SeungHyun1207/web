@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>block : html </title>
+    <!-- favicon.ico << 회사 로고 같은 것 절대경로로 설정 -->
+    <link rel="shortcut icon" href="http://attmm.co.kr/ico_favicon.ico">
+</head>
+<body>
+    <h1> html block </h1>
+    <h2> 1. block tag </h2>
+    <p> - 블록 태그는 가로,세로 값을 갖고 밑으로 떨어진다.</p>
+
+    <div style="background-color: red; width: 50%;">빨간 블록 태그</div>
+    <div style="background-color: blue;">파란 블록 태그</div>
+<!-- div 요소는 컨테이너로 사용 + 블록의 스타일을 지정 -->
+    <h2>2. inline tag </h2>
+    <p>-인라인 태그는 가로, 세로 값을 갖을 수 없고 옆으로 붙는다.</p>
+
+    <span style="background-color: red;"> 빨간 인라인 태그 </span>
+    <span style="background-color: blue;;"> 파란 인라인 태그 </span>
+<!-- span 요소는 텍스트 또는 일부의 부분을 표시하는 곳에 사용 + 텍스트 부분의 스타일 지정 -->
+
+    <h2>3. inline-block tag</h2>
+    <p>-인라인 블록 태그는 가로, 세로 값을 갖을 수 있고, 옆으로 붙는다.</p>
+
+    <a href="#" style="width:100px; height: 50px;
+    background-color: green; display:inline-block;
+    color: #fff"> 회사소개 </a>
+    <!-- 가로 세로 값을 적어넣엇지만 인라인블록이라 가질 수 없다 이럴 경우엔 display:block 을 넣어주면 된다. -->
+    <a href="#" style="width:100px; height: 50px;
+    background-color: red; display:inline-block;
+    color: #fff"> 오시는 길 </a>
+    <a href="#" style="width:100px; height: 50px;
+    background-color: blueviolet; display:inline-block;
+    color: #fff"> 복지 정보 </a>
+    
+
+</body>
+</html>

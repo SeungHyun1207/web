@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- html하게 되면 이 줄만 안뜸-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본속성 : html</title> <!--경로넣기-->
+</head>
+<!-- ctrl + ? = 주석 -->
+<!-- alt+shift+↓  아래로 그대로 복사 -->
+<!-- ul/li/a태그 순서대로 표시 할 때 ul>li>a << 라고 적으면 편함 -->
+<body>
+    <h1>html</h1>
+    <h2>1.heading tag</h2>
+    <p>-웹페이지에 표시할 제목 또는 부제목</p>
+    
+    <h1> JUST 쇼핑몰</h1>
+    <h2>공지사항</h2>
+    <h2>갤러리</h2>
+    <h2>배너</h2>
+    <h2>바로가기</h2>
+
+    <hr>
+    <!-- 선 긋는 태그 -->
+
+    <h2>2.문단tag</h2>
+    <p>-일반적인 텍스트 블록</p>
+
+    <p>문단의 단락을 의미합니다.</p>
+    <p>
+        문단의 단락을 의미합니다. <br>
+        문단의 단락을 의미합니다. <br>
+        문단의 단락을 의미합니다. <br>
+        문단의 단락을 의미합니다. <br>
+        문단의 단락을 의미합니다. <br>
+        문단의 단락을 의미합니다. <br>
+    </p>
+    
+    <pre>
+   My Bonnie lies over the ocean.
+        
+   My Bonnie lies over the sea.
+
+   My Bonnie lies over the ocean.
+   
+   Oh, bring back my Bonnie to me.
+    </pre>
+
+    <hr>
+    <strong>중요 타이틀</strong> <br>
+    <!-- strong 태그는 중요한 타이틀에 사용 -->
+    <b>굵은 텍스트</b> <br>
+    <!-- b 태그는 중요하진 않지만 볼드체로 넣고 싶을 때 사용 -->
+    
+    <hr>
+    <h2>3. 주소 tag</h2>
+    <p> - 주소나 copyright를 표시하는 태그</p>
+
+    <address>
+        부천시 상동로 578 메가플러스 6층 <br>
+        032-322-0154 <br><br>
+        @copyright 더조은
+    </address>
+
+    <hr>
+    <h2>4. 링크 tag</h2>
+    <p>- 페이지를 연결할 때 사용하는 태그</p>
+    
+    <h3> 절대경로 </h3>  
+    <!-- target="_self" << 기존 창에서 띄우기 -->
+    <!-- target="_blank" << 새 창 띄우기 -->
+    <a href="https://www.naver.com/" target="_blank" title="새창열림">네이버</a> 
+    <a href="http://attmm.co.kr/"> Hyun 포토폴리오 </a>
+    <a href="http://attmm.co.kr/map.html"> Hyun 포토폴리오 오시는 길 </a>
+    <a href="http://attmm.co.kr/work/onepage/NCSOFT.html">  NCSOFT</a>
+    <a href="http://attmm.co.kr/work/fullpage/LG.html"> LG </a>
+    <a href="http://attmm.co.kr/work/event/maplestory.html"> 메이플스토리 </a>
+    
+    <h3> 상대경로</h3>
+    <!-- 나를 기준으로 상대의 경로를 찾음  -->
+    <!-- ./ < 파일찾기  ../ < 부모폴더로 이동 -->
+    <!-- 이미지 할때 유용 -->
+    <a href=".r/work/onepage/NCSOFT.html">  NCSOFT</a>
+    <link rel="stylesheet" href="./css/comm.css">
+    <script src="./js/comm.js"></script>
+    <a href="./image/banner.jpg"> 배너 </a>
+
+    <a href="../!포토폴리오/work/event/maplestory.html">!포토폴리오/work/event/maplestory.html</a>
+
+    <!-- 메일  -->
+    <a href="mailto:masterhyun1207@nate.com">masterhyun1207@nate.com</a>
+
+    <a href="tel:010-0123-0123">010-0123-0123</a>
+
+
+    <h2> 5. 이미지 tag </h2>
+    <p> - 이미지를 추가할 때 사용하는 태그 (운영성 이미지 일 경우) </p>
+
+    <img src="./image/banner.jpg" alt="마음속 깊이 간직했던 세계 제2의나라  CROSS WORLDS 4월 14일 사전등록 시작" width="100%">
+    <!-- ./imge/banner 는 다른이름으로 저장 후에 내가 저장했던 이름으로 한 것 -->
+
+    <a href="https://www.worldwide.kia.com/kr/ev6?utm_source=NAVER&utm_medium=RollingBoard&utm_term=&utm_content=POPF_DEMO&utm_campaign=CVPRE2021KMC&dclid=CITazdrh9-8CFWbDFgUddusKCA" target="_blank" title="새창열림">
+        <img src="https://ssl.pstatic.net/tveta/libs/1330/1330964/d1854f4a27bdf4bce15b_20210330152528998.jpg" alt="The Kia EV6. KN" width="100%">
+    <!-- https://는 이미지 주소 복사를 이용하여 절대경로로 사용한 것 -->
+    </a>
+
+
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+</body>
+</html>
